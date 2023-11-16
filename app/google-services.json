@@ -1,0 +1,49 @@
+{
+  "project_info": {
+    "project_number": "157856627562",
+    "firebase_url": "https://green-keeper-d077f-default-rtdb.firebaseio.com",
+    "project_id": "green-keeper-d077f",
+    "storage_bucket": "green-keeper-d077f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:157856627562:android:8a6b7205e1e36847ec0313",
+        "android_client_info": {
+          "package_name": "com.example.gr"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC_T-fKNKuPMoNE46D8DrXpZikMVAWtocM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:157856627562:android:90d061fa4d0cf67bec0313",
+        "android_client_info": {
+          "package_name": "com.example.greenkeeper"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC_T-fKNKuPMoNE46D8DrXpZikMVAWtocM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

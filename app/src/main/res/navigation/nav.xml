@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav"
+    app:startDestination="@id/inicioFragment">
+
+    <fragment
+        android:id="@+id/inicioFragment"
+        android:name="com.example.gr.InicioFragment"
+        android:label="fragment_inicio"
+        tools:layout="@layout/fragment_inicio" />
+    <fragment
+        android:id="@+id/recordatorioFragment"
+        android:name="com.example.gr.RecordatorioFragment"
+        android:label="fragment_recordatorio"
+        tools:layout="@layout/fragment_recordatorio" />
+    <fragment
+        android:id="@+id/plantaFragment"
+        android:name="com.example.gr.PlantaFragment"
+        android:label="fragment_planta"
+        tools:layout="@layout/fragment_planta" />
+    <fragment
+        android:id="@+id/usuarioFragment"
+        android:name="com.example.gr.UsuarioFragment"
+        android:label="fragment_usuario"
+        tools:layout="@layout/fragment_usuario" />
+</navigation>
