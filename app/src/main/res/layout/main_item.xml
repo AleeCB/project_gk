@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardBackgroundColor="#F1DCE7"
+    android:elevation="6dp"
+    android:clickable="true"
+    android:layout_marginStart="16dp"
+    android:layout_marginEnd="16dp"
+    android:layout_marginTop="16dp"
+    android:layout_marginBottom="16dp"
+
+    app:cardElevation="30dp"
+    app:cardCornerRadius="20dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:padding="15dp">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@mipmap/ic_launcher"
+            android:id="@+id/img1"
+            tools:ignore="MissingClass" />
+
+        <TextView
+            android:id="@+id/nombretext"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Maestro"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:layout_toRightOf="@id/img1"
+            android:layout_below="@id/nombretext"
+            android:layout_marginLeft="10dp" />
+
+
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

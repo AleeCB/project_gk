@@ -2,11 +2,21 @@ package com.example.gr;
 
 import android.os.Bundle;
 
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+
+import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.google.firebase.database.FirebaseDatabase;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -23,6 +33,8 @@ public class InicioFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    private RecyclerView recyclerView;
+    private MainAdapterInicio mainAdapterInicio;
 
     public InicioFragment() {
         // Required empty public constructor
@@ -59,6 +71,27 @@ public class InicioFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_inicio, container, false);
+
+        View view = inflater.inflate(R.layout.fragment_inicio, container, false);
+
+
+
+        recyclerView = (RecyclerView) view.findViewById(R.id.rv);
+        recyclerView.setLayoutManager(new LinearLayoutManager(requireContext()));
+
+        FirebaseRecyclerOptions<MainModelinicio> options =
+                new FirebaseRecyclerOptions.Builder<MainModelinicio>()
+                        .setQuery(FirebaseDatabase.getInstance().getReference().child("inicio"), MainModelinicio.class)
+                        .build();
+
+        mainAdapterInicio = new MainAdapterInicio(options);
+        recyclerView.setAdapter(mainAdapterInicio);
+
+        return  view;
+    }
+    @Override
+    public void onStart() {
+        super.onStart();
+        mainAdapterInicio.startListening();
     }
 }
