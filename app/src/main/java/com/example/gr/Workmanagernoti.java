@@ -45,7 +45,7 @@ public class Workmanagernoti extends Worker {
         return Result.success();
 
     }
-
+//para guaradar cambios
         private void oreo(String t, String d){
         String id="message";
         NotificationManager nm = (NotificationManager) getApplicationContext().getSystemService (Context. NOTIFICATION_SERVICE);

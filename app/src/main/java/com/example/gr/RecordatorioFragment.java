@@ -157,7 +157,7 @@ private int  minutos, hora,dia, mes ,anio;
         tvhora = popupView.findViewById(R.id.tv_hora);
         guardar = popupView.findViewById(R.id.btn_guardar);
         eliminar = popupView.findViewById(R.id.btn_eliminar);
-
+//para guardar cambios xd
         selefecha.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
