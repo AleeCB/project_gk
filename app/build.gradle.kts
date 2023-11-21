@@ -60,4 +60,8 @@ dependencies {
     implementation ("androidx.navigation:navigation-fragment:2.5.3")
     implementation ("androidx.navigation:navigation-ui:2.5.3")
     implementation ("androidx.appcompat:appcompat:1.3.0")
+
+    implementation ("com.wdullaer:materialdatetimepicker:4.2.3")
+    implementation ("androidx.appcompat:appcompat:1.2.0")
+    implementation ("androidx.work:work-runtime:2.8.0-beta02")
 }
