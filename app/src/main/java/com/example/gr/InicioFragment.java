@@ -7,6 +7,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -70,14 +71,13 @@ public class InicioFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-
         View view = inflater.inflate(R.layout.fragment_inicio, container, false);
 
+        recyclerView = view.findViewById(R.id.rv);
 
-
-        recyclerView = (RecyclerView) view.findViewById(R.id.rv);
-        recyclerView.setLayoutManager(new LinearLayoutManager(requireContext()));
+        // Cambiar LinearLayoutManager a GridLayoutManager
+        int columnas = 2; // Número de columnas
+        recyclerView.setLayoutManager(new GridLayoutManager(requireContext(), columnas));
 
         FirebaseRecyclerOptions<MainModelinicio> options =
                 new FirebaseRecyclerOptions.Builder<MainModelinicio>()
