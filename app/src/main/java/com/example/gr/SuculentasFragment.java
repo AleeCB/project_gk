@@ -2,22 +2,18 @@ package com.example.gr;
 
 import android.os.Bundle;
 
-import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-
-import org.jetbrains.annotations.Nullable;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link PlantaFragment#newInstance} factory method to
+ * Use the {@link SuculentasFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class PlantaFragment extends Fragment {
+public class SuculentasFragment extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -28,7 +24,7 @@ public class PlantaFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public PlantaFragment() {
+    public SuculentasFragment() {
         // Required empty public constructor
     }
 
@@ -38,11 +34,11 @@ public class PlantaFragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment PlantaFragment.
+     * @return A new instance of fragment SuculentasFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static PlantaFragment newInstance(String param1, String param2) {
-        PlantaFragment fragment = new PlantaFragment();
+    public static SuculentasFragment newInstance(String param1, String param2) {
+        SuculentasFragment fragment = new SuculentasFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -63,28 +59,6 @@ public class PlantaFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_planta, container, false);
-
-
-
-    }
-
-
-
-    @Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-
-        Button btn_add_planta = view.findViewById(R.id.btn_add_planta);
-
-
-        btn_add_planta.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                AgregarPlantaFragment fm = new AgregarPlantaFragment();
-                fm.show(getActivity().getSupportFragmentManager(), "Agregar planta");
-
-            }
-        });
+        return inflater.inflate(R.layout.fragment_suculentas, container, false);
     }
 }

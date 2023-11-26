@@ -30,7 +30,7 @@ public class Workmanagernoti extends Worker {
                 .setInputData(data).build();
 
         WorkManager instance = WorkManager.getInstance();
-       instance.enqueue(noti);
+        instance.enqueue(noti);
     }
 
     @NonNull
@@ -45,14 +45,14 @@ public class Workmanagernoti extends Worker {
         return Result.success();
 
     }
-//para guaradar cambios
-        private void oreo(String t, String d){
+    //para guaradar cambios
+    private void oreo(String t, String d){
         String id="message";
         NotificationManager nm = (NotificationManager) getApplicationContext().getSystemService (Context. NOTIFICATION_SERVICE);
         NotificationCompat. Builder builder = new NotificationCompat.Builder (getApplicationContext(),id);
         if (Build.VERSION.SDK_INT >= Build. VERSION_CODES.O) {
             NotificationChannel nc = new NotificationChannel(id,
-            "nuevo", NotificationManager.IMPORTANCE_HIGH);
+                    "nuevo", NotificationManager.IMPORTANCE_HIGH);
             nc.setDescription("Notificacion FCM");
             nc.setShowBadge(true);
             assert nm != null;
@@ -71,10 +71,10 @@ public class Workmanagernoti extends Worker {
                 .setContentText (d)
                 .setContentIntent(pendingIntent)
                 .setContentInfo("nuevo");
-                Random random = new Random();
-            int idNotify = random.nextInt(  8000);
-            assert nm != null;
-            nm.notify(idNotify, builder.build());
+        Random random = new Random();
+        int idNotify = random.nextInt(  8000);
+        assert nm != null;
+        nm.notify(idNotify, builder.build());
 
     }
 }

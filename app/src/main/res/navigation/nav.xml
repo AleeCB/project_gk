@@ -9,7 +9,11 @@
         android:id="@+id/inicioFragment"
         android:name="com.example.gr.InicioFragment"
         android:label="fragment_inicio"
-        tools:layout="@layout/fragment_inicio" />
+        tools:layout="@layout/fragment_inicio" >
+        <action
+            android:id="@+id/action_inicioFragment_to_suculentasFragment"
+            app:destination="@id/suculentasFragment" />
+    </fragment>
     <fragment
         android:id="@+id/recordatorioFragment"
         android:name="com.example.gr.RecordatorioFragment"
@@ -25,4 +29,9 @@
         android:name="com.example.gr.UsuarioFragment"
         android:label="fragment_usuario"
         tools:layout="@layout/fragment_usuario" />
+    <fragment
+        android:id="@+id/suculentasFragment"
+        android:name="com.example.gr.SuculentasFragment"
+        android:label="fragment_suculentas"
+        tools:layout="@layout/fragment_suculentas" />
 </navigation>

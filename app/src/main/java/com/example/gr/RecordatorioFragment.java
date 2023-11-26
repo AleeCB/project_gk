@@ -76,7 +76,7 @@ public class RecordatorioFragment extends Fragment {
     Calendar actual = Calendar.getInstance();
     Calendar calendar = Calendar.getInstance();
     private Context mContext;
-private int  minutos, hora,dia, mes ,anio;
+    private int  minutos, hora,dia, mes ,anio;
     public RecordatorioFragment() {
         // Required empty public constructor
     }
@@ -183,13 +183,13 @@ private int  minutos, hora,dia, mes ,anio;
         selehora.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-            hora = actual.get(Calendar.HOUR_OF_DAY);
+                hora = actual.get(Calendar.HOUR_OF_DAY);
                 minutos = actual.get(Calendar.MINUTE);
 
                 TimePickerDialog timePickerDialog= new TimePickerDialog(v.getContext(), new TimePickerDialog.OnTimeSetListener() {
                     @Override
                     public void onTimeSet(TimePicker view, int h, int m) {
-                    calendar.set(Calendar.HOUR_OF_DAY,h);
+                        calendar.set(Calendar.HOUR_OF_DAY,h);
                         calendar.set(Calendar.MINUTE,m);
 
                         tvhora.setText(String.format("%02d:%02d",h, m));
@@ -217,7 +217,7 @@ private int  minutos, hora,dia, mes ,anio;
         eliminar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-            EliminarNoti("tag1");
+                EliminarNoti("tag1");
             }
         });
 
@@ -312,6 +312,3 @@ private int  minutos, hora,dia, mes ,anio;
         dpd.show();
     }
 */
-
-
-

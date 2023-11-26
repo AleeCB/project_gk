@@ -26,6 +26,7 @@
             android:layout_height="80dp"
             android:src="@mipmap/ic_launcher"
             android:id="@+id/img1"
+
             tools:ignore="MissingClass" />
 
         <TextView

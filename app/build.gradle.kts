@@ -1,6 +1,7 @@
 plugins {
     id("com.android.application")
     id("com.google.gms.google-services")
+
 }
 
 android {
@@ -39,6 +40,7 @@ dependencies {
     implementation("com.google.firebase:firebase-database:20.3.0")
     implementation("androidx.navigation:navigation-fragment:2.7.5")
     implementation("androidx.navigation:navigation-ui:2.7.5")
+    implementation("com.google.firebase:firebase-firestore:24.9.1")
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
@@ -57,11 +59,26 @@ dependencies {
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
 
 
-    implementation ("androidx.navigation:navigation-fragment:2.5.3")
-    implementation ("androidx.navigation:navigation-ui:2.5.3")
-    implementation ("androidx.appcompat:appcompat:1.3.0")
+
+
 
     implementation ("com.wdullaer:materialdatetimepicker:4.2.3")
-    implementation ("androidx.appcompat:appcompat:1.2.0")
+
     implementation ("androidx.work:work-runtime:2.8.0-beta02")
+    implementation ("androidx.core:core:1.6.0")
+
+    implementation ("com.google.firebase:firebase-storage:20.0.0")
+    implementation ("com.squareup.picasso:picasso:2.5.2")
+
+    implementation ("com.google.firebase:firebase-auth:22.0.0")
+    implementation ("com.google.firebase:firebase-database:20.2.1")
+    implementation ("com.google.android.material:material:1.9.0")
+
+    implementation (platform("com.google.firebase:firebase-bom:32.0.0"))
+    implementation ("com.google.firebase:firebase-analytics")
+
+    implementation ("com.google.firebase:firebase-common:20.3.0")
+
+
+
 }

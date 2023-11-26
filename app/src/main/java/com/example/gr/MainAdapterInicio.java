@@ -1,11 +1,13 @@
 package com.example.gr;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
@@ -34,6 +36,17 @@ public class MainAdapterInicio extends FirebaseRecyclerAdapter<MainModelinicio, 
                 .error(com.firebase.ui.database.R.drawable.common_google_signin_btn_icon_dark_normal)
                 .into(holder.img);
 
+
+
+        holder.img.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Navigation.findNavController(v).navigate(R.id.action_inicioFragment_to_suculentasFragment
+                );
+            }
+        })
+
+        ;
     }
 
     @NonNull
