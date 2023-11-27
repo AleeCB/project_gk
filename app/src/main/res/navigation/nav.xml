@@ -13,6 +13,21 @@
         <action
             android:id="@+id/action_inicioFragment_to_suculentasFragment"
             app:destination="@id/suculentasFragment" />
+        <action
+            android:id="@+id/action_inicioFragment_to_colgantesFragment"
+            app:destination="@id/colgantesFragment" />
+        <action
+            android:id="@+id/action_inicioFragment_to_floracionFragment"
+            app:destination="@id/floracionFragment" />
+        <action
+            android:id="@+id/action_inicioFragment_to_follageFragment"
+            app:destination="@id/follageFragment" />
+        <action
+            android:id="@+id/action_inicioFragment_to_grandesFragment"
+            app:destination="@id/grandesFragment" />
+        <action
+            android:id="@+id/action_inicioFragment_to_vegetalesFragment"
+            app:destination="@id/vegetalesFragment" />
     </fragment>
     <fragment
         android:id="@+id/recordatorioFragment"
@@ -34,4 +49,29 @@
         android:name="com.example.gr.SuculentasFragment"
         android:label="fragment_suculentas"
         tools:layout="@layout/fragment_suculentas" />
+    <fragment
+        android:id="@+id/vegetalesFragment"
+        android:name="com.example.gr.VegetalesFragment"
+        android:label="fragment_vegetales"
+        tools:layout="@layout/fragment_vegetales" />
+    <fragment
+        android:id="@+id/colgantesFragment"
+        android:name="com.example.gr.ColgantesFragment"
+        android:label="fragment_colgantes"
+        tools:layout="@layout/fragment_colgantes" />
+    <fragment
+        android:id="@+id/floracionFragment"
+        android:name="com.example.gr.FloracionFragment"
+        android:label="fragment_floracion"
+        tools:layout="@layout/fragment_floracion" />
+    <fragment
+        android:id="@+id/follageFragment"
+        android:name="com.example.gr.FollageFragment"
+        android:label="fragment_follage"
+        tools:layout="@layout/fragment_follage" />
+    <fragment
+        android:id="@+id/grandesFragment"
+        android:name="com.example.gr.GrandesFragment"
+        android:label="fragment_grandes"
+        tools:layout="@layout/fragment_grandes" />
 </navigation>

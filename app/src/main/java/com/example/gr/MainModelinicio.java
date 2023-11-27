@@ -27,4 +27,6 @@ public class MainModelinicio {
     public void setImagen(String imagen) {
         this.imagen = imagen;
     }
+
+
 }

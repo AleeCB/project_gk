@@ -38,21 +38,54 @@ public class MainAdapterInicio extends FirebaseRecyclerAdapter<MainModelinicio, 
 
 
 
+        holder.img.setTag(position);
+
+        // Configurar el evento de clic en la imagen
         holder.img.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Navigation.findNavController(v).navigate(R.id.action_inicioFragment_to_suculentasFragment
-                );
+                // Obtener la posición del ítem desde la etiqueta
+                int clickedPosition = (int) v.getTag();
+
+                // Llamar a un método para manejar la navegación según la posición
+                navigateToFragment(clickedPosition,holder);
             }
-        })
-
-        ;
+        });
     }
-
+    private void navigateToFragment(int position,MyViewHolder holder) {
+        switch (position) {
+            case 0:
+                // Navegar al primer fragmento
+                Navigation.findNavController(holder.img).navigate(R.id.action_inicioFragment_to_suculentasFragment);
+                break;
+            case 1:
+                // Navegar al segundo fragmento
+                Navigation.findNavController(holder.img).navigate(R.id.action_inicioFragment_to_follageFragment);
+                break;
+            case 2:
+                // Navegar al segundo fragmento
+                Navigation.findNavController(holder.img).navigate(R.id.action_inicioFragment_to_floracionFragment);
+                break;
+            case 3:
+                // Navegar al segundo fragmento
+                Navigation.findNavController(holder.img).navigate(R.id.action_inicioFragment_to_vegetalesFragment);
+                break;
+            case 4:
+                // Navegar al segundo fragmento
+                Navigation.findNavController(holder.img).navigate(R.id.action_inicioFragment_to_grandesFragment);
+                break;
+            case 5:
+                // Navegar al segundo fragmento
+                Navigation.findNavController(holder.img).navigate(R.id.action_inicioFragment_to_colgantesFragment);
+            default:
+                // Manejar caso predeterminado o no hacer nada
+                break;
+        }
+    }
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-    View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.main_item, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.main_item, parent, false);
         return new MyViewHolder(view);
     }
 
