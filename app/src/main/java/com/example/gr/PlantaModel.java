@@ -2,17 +2,17 @@ package com.example.gr;
 
 public class PlantaModel {
 
-    String localizacion, nombre, tipo;
-    Double macetas;
-
-    public PlantaModel(String localizacion, String nombre, String tipo, Double macetas) {
-        this.localizacion = localizacion;
-        this.nombre = nombre;
-        this.tipo = tipo;
-        this.macetas = macetas;
-    }
+    String localizacion, macetas, nombre, tipo, img;
 
     public PlantaModel() {
+    }
+
+    public PlantaModel(String localizacion, String macetas, String nombre, String tipo, String img) {
+        this.localizacion = localizacion;
+        this.macetas = macetas;
+        this.nombre = nombre;
+        this.tipo = tipo;
+        this.img = img;
     }
 
     public String getLocalizacion() {
@@ -21,6 +21,14 @@ public class PlantaModel {
 
     public void setLocalizacion(String localizacion) {
         this.localizacion = localizacion;
+    }
+
+    public String getMacetas() {
+        return macetas;
+    }
+
+    public void setMacetas(String macetas) {
+        this.macetas = macetas;
     }
 
     public String getNombre() {
@@ -39,11 +47,16 @@ public class PlantaModel {
         this.tipo = tipo;
     }
 
-    public Double getMacetas() {
-        return macetas;
+    public String getImg() {
+        return img;
     }
 
-    public void setMacetas(Double macetas) {
-        this.macetas = macetas;
+    public void setImg(String img) {
+        this.img = img;
+    }
+
+    public String getImagenPath() {
+
+        return "imagenes_planta/" + img;
     }
 }

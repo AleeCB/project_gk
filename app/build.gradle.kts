@@ -78,7 +78,7 @@ dependencies {
     implementation ("com.google.firebase:firebase-analytics")
     implementation ("com.google.firebase:firebase-storage:20.0.0")
     implementation ("com.google.firebase:firebase-common:20.3.0")
-
+    implementation("com.orhanobut:dialogplus:1.11@aar")
 
 
 

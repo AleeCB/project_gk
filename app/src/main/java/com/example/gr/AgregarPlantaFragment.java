@@ -62,13 +62,13 @@ public class AgregarPlantaFragment extends DialogFragment {
                 String nombreP = nombre.getText().toString().trim();
                 String localiP = loc.getText().toString().trim();
                 String tipoP = tipo.getText().toString().trim();
-                String cMacetasPText = cMacetas.getText().toString().trim();
+                String cMacetasP = cMacetas.getText().toString().trim();
 
-                if (nombreP.isEmpty() || localiP.isEmpty() || tipoP.isEmpty() || cMacetasPText.isEmpty() || mImageUri == null) {
+                if (nombreP.isEmpty() || localiP.isEmpty() || tipoP.isEmpty() || cMacetasP.isEmpty() || mImageUri == null) {
                     Toast.makeText(getContext(), "Ingresar todos los datos y seleccionar una imagen", Toast.LENGTH_SHORT).show();
                 } else {
                     try {
-                        Double cMacetasP = Double.parseDouble(cMacetasPText);
+
                         uploadImageAndPostPet(nombreP, localiP, tipoP, cMacetasP);
                     } catch (NumberFormatException e) {
                         Toast.makeText(getContext(), "Error al ingresar el número de macetas", Toast.LENGTH_SHORT).show();
@@ -89,7 +89,7 @@ public class AgregarPlantaFragment extends DialogFragment {
         return v;
     }
 
-    private void uploadImageAndPostPet(final String nombreP, final String localiP, final String tipoP, final Double cMacetasP) {
+    private void uploadImageAndPostPet(final String nombreP, final String localiP, final String tipoP, final String cMacetasP) {
         // Crea una referencia única para la imagen
         final StorageReference imageRef = mStorageRef.child(System.currentTimeMillis() + ".jpg");
 
@@ -119,7 +119,7 @@ public class AgregarPlantaFragment extends DialogFragment {
                 });
     }
 
-    private void postPetConImagen(String nombreP, String localiP, String tipoP, Double cMacetasP, String imageUrl) {
+    private void postPetConImagen(String nombreP, String localiP, String tipoP, String cMacetasP, String imageUrl) {
         // Crea un mapa de datos con la URL de la imagen
         Map<String, Object> map = new HashMap<>();
         map.put("nombre", nombreP);
