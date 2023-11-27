@@ -122,7 +122,7 @@ public class RecordatorioFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        Button boton = view.findViewById(R.id.buttonR);
+        Button boton = view.findViewById(R.id.btn_recordatorio);
         mContext = getActivity();
 
         boton.setOnClickListener(new View.OnClickListener() {
@@ -156,7 +156,7 @@ public class RecordatorioFragment extends Fragment {
         tvfecha = popupView.findViewById(R.id.tv_fecha);
         tvhora = popupView.findViewById(R.id.tv_hora);
         guardar = popupView.findViewById(R.id.btn_guardar);
-        eliminar = popupView.findViewById(R.id.btn_eliminar);
+
 //para guardar cambios xd
         selefecha.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -172,7 +172,7 @@ public class RecordatorioFragment extends Fragment {
                         calendar.set(calendar.MONTH,m);
                         calendar.set(calendar.YEAR,y);
 
-                        SimpleDateFormat format = new SimpleDateFormat("dd/mm/yy");
+                        SimpleDateFormat format = new SimpleDateFormat("dd/MM/yy");
                         String strDate = format.format(calendar.getTime());
                         tvfecha.setText(strDate);
                     }
@@ -204,22 +204,23 @@ public class RecordatorioFragment extends Fragment {
             public void onClick(View v) {
 
                 String tag = generatekey();
-                Long Alerttime = calendar.getTimeInMillis() - System.currentTimeMillis();
+                long timeUntilNotification = calendar.getTimeInMillis() - System.currentTimeMillis();
+                if (timeUntilNotification < 0) {
+                    // Si el tiempo seleccionado ya ha pasado, programar para el día siguiente
+                    calendar.add(Calendar.DAY_OF_MONTH, 1);
+                    timeUntilNotification = calendar.getTimeInMillis() - System.currentTimeMillis();
+                }
                 int random = (int) (Math.random() * 50 + 1);
                 Data data =  GuardarData(  "Notificacion workmanager" , "soy un detalle", random);
-                Workmanagernoti.GuardarNoti(Alerttime,data,tag);
+                Workmanagernoti.GuardarNoti(timeUntilNotification,data,tag);
 
 
 
                 Toast.makeText(mContext, "Recordatorio guardado.", Toast.LENGTH_SHORT).show();
+                dialog.dismiss();
             }
         });
-        eliminar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                EliminarNoti("tag1");
-            }
-        });
+
 
 
         btnCerrar.setOnClickListener(new View.OnClickListener() {
@@ -232,15 +233,7 @@ public class RecordatorioFragment extends Fragment {
 
 
 
-        // Configura el botón de crear notificación
-        /*Button btnCrearNotificacion = popupView.findViewById(R.id.btnCrearNotificacion);
-        btnCrearNotificacion.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //mostrarCalendario();
-            }
-        });
-*/
+
         dialog.show();
     }
     private void EliminarNoti(String tag){
@@ -263,52 +256,3 @@ public class RecordatorioFragment extends Fragment {
 
 
 
-
-    /*private void mostrarCalendario() {
-        Calendar now = Calendar.getInstance();
-        DatePickerDialog dpd = DatePickerDialog.newInstance(
-                new DatePickerDialog.OnDateSetListener() {
-                    @Override
-                    public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-
-
-                        Calendar calendar = Calendar.getInstance();
-                        calendar.set(Calendar.YEAR, year);
-                        int monthOfYear = 0;
-                        calendar.set(Calendar.MONTH, monthOfYear);
-                        calendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
-
-                        TimePickerDialog tpd = TimePickerDialog.newInstance(
-                                new TimePickerDialog.OnTimeSetListener() {
-                                    @Override
-                                    public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
-
-
-                                        Calendar selectedDate = Calendar.getInstance();
-                                        selectedDate.set(Calendar.YEAR, year);
-                                        selectedDate.set(Calendar.MONTH, monthOfYear);
-                                        selectedDate.set(Calendar.DAY_OF_MONTH, dayOfMonth);
-                                        selectedDate.set(Calendar.HOUR_OF_DAY, hourOfDay);
-                                        selectedDate.set(Calendar.MINUTE, minute);
-
-
-                                        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm");
-                                        String strDate = sdf.format(selectedDate.getTime());
-
-                                        Log.d("MiFragment", "Fecha y hora seleccionada: " + strDate);
-                                    }
-                                },
-                                now.get(Calendar.HOUR_OF_DAY),
-                                now.get(Calendar.MINUTE),
-                                true
-                        );
-                        tpd.show();
-                    }
-                },
-                now.get(Calendar.YEAR),
-                now.get(Calendar.MONTH),
-                now.get(Calendar.DAY_OF_MONTH)
-        );
-        dpd.show();
-    }
-*/

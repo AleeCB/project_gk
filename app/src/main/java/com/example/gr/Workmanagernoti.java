@@ -31,6 +31,8 @@ public class Workmanagernoti extends Worker {
 
         WorkManager instance = WorkManager.getInstance();
         instance.enqueue(noti);
+
+
     }
 
     @NonNull
@@ -48,6 +50,7 @@ public class Workmanagernoti extends Worker {
     //para guaradar cambios
     private void oreo(String t, String d){
         String id="message";
+
         NotificationManager nm = (NotificationManager) getApplicationContext().getSystemService (Context. NOTIFICATION_SERVICE);
         NotificationCompat. Builder builder = new NotificationCompat.Builder (getApplicationContext(),id);
         if (Build.VERSION.SDK_INT >= Build. VERSION_CODES.O) {
@@ -67,7 +70,7 @@ public class Workmanagernoti extends Worker {
                 .setWhen(System.currentTimeMillis())
                 .setContentTitle(t)
                 .setTicker("Nueva notificacion")
-                .setSmallIcon(R.mipmap.ic_launcher)
+                .setSmallIcon(R.drawable.logo2)
                 .setContentText (d)
                 .setContentIntent(pendingIntent)
                 .setContentInfo("nuevo");
@@ -76,5 +79,8 @@ public class Workmanagernoti extends Worker {
         assert nm != null;
         nm.notify(idNotify, builder.build());
 
+
+
     }
+
 }

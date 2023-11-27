@@ -90,19 +90,14 @@
             android:text="Guardar"
             app:cornerRadius="32dp" />
 
-        <android.widget.Button
-            android:id="@+id/btn_eliminar"
-            android:layout_width="63dp"
-            android:layout_height="19dp"
-            android:background="@drawable/bordes_redondos"
-            android:text="eliminar" />
+
 
         <android.widget.Button
             android:id="@+id/btnCerrar"
             android:layout_width="76dp"
             android:layout_height="33dp"
             android:background="@drawable/bordes_redondos"
-            android:text="Cerrar" />
+            android:text="Cancelar" />
     </LinearLayout>
 
 <!--Para guaradar cambios-->

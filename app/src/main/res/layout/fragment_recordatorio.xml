@@ -9,7 +9,10 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical">>
+
+
+
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -29,33 +32,31 @@
                 android:textSize="26sp"
                 tools:layout_editor_absoluteX="149dp"
                 tools:layout_editor_absoluteY="43dp" />
+
+
         </LinearLayout>
-
-
-        <LinearLayout
+        <Button
+            android:id="@+id/btn_recordatorio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="16dp"
+            android:text="Nueva Alarma"/>
+       <!-- <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
             android:layout_width="match_parent"
-            android:layout_height="128dp"
-            android:gravity="center"
-            android:orientation="vertical">
-
-
-            <android.widget.Button
-                android:id="@+id/buttonR"
-                android:layout_width="224dp"
-                android:layout_height="60dp"
-                android:background="@drawable/bordes_redondos"
-                android:onClick="abreActivity5"
-                android:text="Iniciar sesión "
-                app:cornerRadius="32dp" />
-
+            android:layout_height="match_parent"
+            android:padding="16dp" /> -->
 
         </LinearLayout>
 
-        <TextView android:id="@+id/textView_notificacion" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Texto de la notificación" android:padding="10dp" />
-
-        <!--para guardar cambios-->
 
 
-    </LinearLayout>
+
+
+
+
+
 
 </FrameLayout>

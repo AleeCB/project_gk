@@ -22,13 +22,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <!--<SearchView
-            android:id="@+id/search"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#FFFFFF"
-            android:backgroundTint="#FFFFFF"
-            android:queryHint="Buscar" /> -->
+
 
 
 
@@ -54,11 +48,14 @@
         </LinearLayout>
 
 
-
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerViewSingle"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:id="@+id/rv"
+            android:layout_width="364dp"
+            android:layout_height="478dp"
+            android:orientation="horizontal"
+            tools:layout_editor_absoluteX="1dp"
+            tools:layout_editor_absoluteY="1dp" />
 
     </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
