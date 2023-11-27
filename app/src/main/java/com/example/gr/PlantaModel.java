@@ -2,17 +2,18 @@ package com.example.gr;
 
 public class PlantaModel {
 
-    String localizacion, macetas, nombre, tipo, img;
+    public byte[] getImageUrl;
+    String localizacion, macetas, nombre, tipo, imageUrl;
 
     public PlantaModel() {
     }
 
-    public PlantaModel(String localizacion, String macetas, String nombre, String tipo, String img) {
+    public PlantaModel(String localizacion, String macetas, String nombre, String tipo, String imageUrl) {
         this.localizacion = localizacion;
         this.macetas = macetas;
         this.nombre = nombre;
         this.tipo = tipo;
-        this.img = img;
+        this.imageUrl = imageUrl;
     }
 
     public String getLocalizacion() {
@@ -47,16 +48,16 @@ public class PlantaModel {
         this.tipo = tipo;
     }
 
-    public String getImg() {
-        return img;
+    public String getImageUrl() {
+        return imageUrl;
     }
 
-    public void setImg(String img) {
-        this.img = img;
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
     }
 
     public String getImagenPath() {
 
-        return "imagenes_planta/" + img;
+        return "imagenes_planta/" + imageUrl;
     }
 }

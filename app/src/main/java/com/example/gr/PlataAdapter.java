@@ -75,15 +75,14 @@ public class PlataAdapter extends FirebaseRecyclerAdapter<PlantaModel, PlataAdap
         StorageReference storageReference = FirebaseStorage.getInstance().getReference();
 
         // Construir la URL completa de la imagen
-        String imagenPath = model.getImagenPath();
-        String imageUrl = "gs://tu-proyecto.appspot.com/" + imagenPath;
 
-        Glide.with(holder.img.getContext())
-                .load(model.getImg())// URL de la imagen desde la base de datos
+
+        Glide.with(holder.imageUrl.getContext())
+                .load(model.getImageUrl)// URL de la imagen desde la base de datos
                 .placeholder(com.firebase.ui.database.R.drawable.common_google_signin_btn_icon_dark)
                 .circleCrop()
                 .error(com.firebase.ui.database.R.drawable.common_google_signin_btn_icon_dark_normal)
-                .into(holder.img);
+                .into(holder.imageUrl);
 
 
         // botones de editar y eliminar
@@ -93,7 +92,7 @@ public class PlataAdapter extends FirebaseRecyclerAdapter<PlantaModel, PlataAdap
             public void onClick(View v) {
 
                 // lo siguiente hace que se muestre el update_popup al presionar el botón editar
-                final DialogPlus dialogPlus = DialogPlus.newDialog(holder.img.getContext())
+                final DialogPlus dialogPlus = DialogPlus.newDialog(holder.imageUrl.getContext())
                         .setContentHolder(new ViewHolder(R.layout.update_popup))
                         .setExpanded(true, 1200)
                         .create();
@@ -146,7 +145,35 @@ public class PlataAdapter extends FirebaseRecyclerAdapter<PlantaModel, PlataAdap
                 });
             }
         });
+
+        holder.btnDelete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(holder.nombre.getContext());
+                builder.setTitle("Are you sure?");
+                builder.setMessage("Deleted data can't be Undo.");
+
+                builder.setPositiveButton("Delete", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        FirebaseDatabase.getInstance().getReference().child("miPlanta")
+                                .child(getRef(position).getKey()).removeValue();
+                        //Toast.makeText(holder.name.getContext(), "Data Deleted Successfully", Toast.LENGTH_SHORT).show();
+                    }
+                });
+
+                builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Toast.makeText(holder.nombre.getContext(), "Cancelled", Toast.LENGTH_SHORT).show();
+                    }
+                });
+                builder.show();
+            }
+        });
     }
+
+
 
 
     @NonNull
@@ -159,7 +186,7 @@ public class PlataAdapter extends FirebaseRecyclerAdapter<PlantaModel, PlataAdap
     public static class MyViewHolder extends RecyclerView.ViewHolder {
 
         TextView nombre, loca, tipo, maceta;
-        CircleImageView img;
+        CircleImageView imageUrl;
 
         Button btnEdit, btnDelete;
         public MyViewHolder(@NonNull View itemView) {
@@ -169,7 +196,7 @@ public class PlataAdapter extends FirebaseRecyclerAdapter<PlantaModel, PlataAdap
             loca =  (TextView) itemView.findViewById(R.id.loP);
             tipo =  (TextView) itemView.findViewById(R.id.tipoP);
             maceta =  (TextView) itemView.findViewById(R.id.maP);
-            img =  (CircleImageView) itemView.findViewById(R.id.img1);
+            imageUrl =  (CircleImageView) itemView.findViewById(R.id.img1);
             // botones para editar y borrar
             btnEdit = (Button)itemView.findViewById(R.id.btnEdit);
             btnDelete = (Button) itemView.findViewById(R.id.btnDelete);
