@@ -3,13 +3,324 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".SuculentasFragment">
 
-    <!-- TODO: Update blank fragment layout -->
+    <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
 
-    <TextView
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="157dp"
+                android:background="@drawable/borde_redondo"
+                android:gravity="center">
+
+
+                <LinearLayout
+                    android:layout_width="66dp"
+                    android:layout_height="100dp"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/imageView4"
+                        android:layout_width="82dp"
+                        android:layout_height="76dp"
+                        app:srcCompat="@drawable/cactus"
+                        tools:layout_editor_absoluteX="31dp"
+                        tools:layout_editor_absoluteY="34dp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="8dp"
+                    android:layout_height="100dp"
+                    android:gravity="center"
+                    android:orientation="vertical" />
+
+                <LinearLayout
+                    android:layout_width="247dp"
+                    android:layout_height="90dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/textCyS"
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        android:gravity="center"
+                        android:text="Cactus y Suculentas"
+                        android:textColor="@color/black"
+                        android:textSize="25sp"
+                        tools:layout_editor_absoluteX="149dp"
+                        tools:layout_editor_absoluteY="43dp" />
+
+                    <TextView
+                        android:id="@+id/textFraseCyS"
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        android:gravity="center"
+                        android:text="¡Menos agua, más amor!"
+                        android:textColor="#8A3A64"
+                        android:textSize="17sp"
+                        tools:layout_editor_absoluteX="149dp"
+                        tools:layout_editor_absoluteY="43dp" />
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="SUCULENTAS" />
+        android:layout_height="37dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="256dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_weight="1"
+            android:text="Consejos para el Cuidado"
+            android:textColor="@color/black"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="263dp"
+            android:layout_height="13dp"
+            android:gravity="center"
+            android:orientation="horizontal" />
+
+        <LinearLayout
+            android:layout_width="312dp"
+            android:layout_height="89dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/carRiego"
+                android:layout_width="72dp"
+                android:layout_height="75dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginEnd="30dp"
+                android:layout_marginBottom="50dp"
+                android:clickable="true"
+                android:elevation="6dp"
+                android:gravity="center"
+                app:cardBackgroundColor="#F1DCE7"
+                app:cardCornerRadius="15dp">
+
+                <ImageView
+                    android:id="@+id/imgRiego"
+                    android:layout_width="61dp"
+                    android:layout_height="47dp"
+                    android:layout_marginStart="7dp"
+                    android:layout_marginTop="14dp"
+                    android:layout_marginEnd="50dp"
+                    app:srcCompat="@drawable/regadera"
+                    tools:layout_editor_absoluteX="31dp"
+                    tools:layout_editor_absoluteY="34dp"
+
+                    />
+            </androidx.cardview.widget.CardView>
+
+
+            <TextView
+                android:id="@+id/textRiego"
+                android:layout_width="85dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Riego   >"
+                android:textColor="#124716"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="312dp"
+            android:layout_height="89dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/carLuz"
+                android:layout_width="72dp"
+                android:layout_height="75dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginEnd="30dp"
+                android:layout_marginBottom="50dp"
+                android:clickable="true"
+                android:elevation="6dp"
+                android:gravity="center"
+                app:cardBackgroundColor="#F1DCE7"
+                app:cardCornerRadius="15dp">
+
+                <ImageView
+                    android:id="@+id/imgLuz"
+                    android:layout_width="61dp"
+                    android:layout_height="47dp"
+                    android:layout_marginStart="7dp"
+                    android:layout_marginTop="14dp"
+                    android:layout_marginEnd="50dp"
+                    app:srcCompat="@drawable/dom"
+                    tools:layout_editor_absoluteX="31dp"
+                    tools:layout_editor_absoluteY="34dp" />
+            </androidx.cardview.widget.CardView>
+
+
+            <TextView
+                android:id="@+id/textLuz"
+                android:layout_width="85dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Luz      "
+                android:textColor="#124716"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="377dp"
+            android:layout_height="89dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/carSitio"
+                android:layout_width="72dp"
+                android:layout_height="75dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginEnd="30dp"
+                android:layout_marginBottom="50dp"
+                android:clickable="true"
+                android:elevation="6dp"
+                android:gravity="center"
+                app:cardBackgroundColor="#F1DCE7"
+                app:cardCornerRadius="15dp">
+
+                <ImageView
+                    android:id="@+id/imgSitio"
+                    android:layout_width="match_parent"
+                    android:layout_height="79dp"
+                    app:srcCompat="@drawable/sitio"
+                    tools:layout_editor_absoluteX="31dp"
+                    tools:layout_editor_absoluteY="34dp"
+
+                    />
+            </androidx.cardview.widget.CardView>
+
+
+            <TextView
+                android:id="@+id/textSitio"
+                android:layout_width="151dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Sitio adecuado     "
+                android:textColor="#124716"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="312dp"
+            android:layout_height="89dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/carAlimento"
+                android:layout_width="72dp"
+                android:layout_height="75dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginEnd="30dp"
+                android:layout_marginBottom="50dp"
+                android:clickable="true"
+                android:elevation="6dp"
+                android:gravity="center"
+                app:cardBackgroundColor="#F1DCE7"
+                app:cardCornerRadius="15dp">
+
+                <ImageView
+                    android:id="@+id/imgAlimento"
+                    android:layout_width="61dp"
+                    android:layout_height="47dp"
+                    android:layout_marginStart="7dp"
+                    android:layout_marginTop="14dp"
+                    android:layout_marginEnd="50dp"
+                    app:srcCompat="@drawable/fertilizante"
+                    tools:layout_editor_absoluteX="31dp"
+                    tools:layout_editor_absoluteY="34dp"
+
+                    />
+            </androidx.cardview.widget.CardView>
+
+
+            <TextView
+                android:id="@+id/textAlimento"
+                android:layout_width="86dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="   Alimento"
+                android:textColor="#124716"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="381dp"
+            android:layout_height="89dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/carComoP"
+                android:layout_width="72dp"
+                android:layout_height="75dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginEnd="30dp"
+                android:layout_marginBottom="50dp"
+                android:clickable="true"
+                android:elevation="6dp"
+                android:gravity="center"
+                app:cardBackgroundColor="#F1DCE7"
+                app:cardCornerRadius="15dp">
+
+                <ImageView
+                    android:id="@+id/imgComoP"
+                    android:layout_width="61dp"
+                    android:layout_height="47dp"
+                    android:layout_marginStart="7dp"
+                    android:layout_marginTop="14dp"
+                    android:layout_marginEnd="50dp"
+                    app:srcCompat="@drawable/plantar"
+                    tools:layout_editor_absoluteX="31dp"
+                    tools:layout_editor_absoluteY="34dp"
+
+                    />
+            </androidx.cardview.widget.CardView>
+
+
+            <TextView
+                android:id="@+id/textComoP"
+                android:layout_width="152dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="¿Cómo plantar?    "
+                android:textColor="#124716"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+
+    </LinearLayout>
 </FrameLayout>

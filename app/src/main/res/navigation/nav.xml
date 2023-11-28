@@ -48,7 +48,23 @@
         android:id="@+id/suculentasFragment"
         android:name="com.example.gr.SuculentasFragment"
         android:label="fragment_suculentas"
-        tools:layout="@layout/fragment_suculentas" />
+        tools:layout="@layout/fragment_suculentas" >
+        <action
+            android:id="@+id/action_suculentasFragment_to_sitioSuculentasFragment"
+            app:destination="@id/sitioSuculentasFragment" />
+        <action
+            android:id="@+id/action_suculentasFragment_to_plantarSuculentasFragment"
+            app:destination="@id/plantarSuculentasFragment" />
+        <action
+            android:id="@+id/action_suculentasFragment_to_luzSuculentasFragment"
+            app:destination="@id/luzSuculentasFragment" />
+        <action
+            android:id="@+id/action_suculentasFragment_to_alimentoSuculentasFragment"
+            app:destination="@id/alimentoSuculentasFragment" />
+        <action
+            android:id="@+id/action_suculentasFragment_to_riegoSuculentasFragment2"
+            app:destination="@id/riegoSuculentasFragment" />
+    </fragment>
     <fragment
         android:id="@+id/vegetalesFragment"
         android:name="com.example.gr.VegetalesFragment"
@@ -74,4 +90,29 @@
         android:name="com.example.gr.GrandesFragment"
         android:label="fragment_grandes"
         tools:layout="@layout/fragment_grandes" />
+    <fragment
+        android:id="@+id/alimentoSuculentasFragment"
+        android:name="com.example.gr.FragmentsSuculentas.AlimentoSuculentasFragment"
+        android:label="fragment_alimento_suculentas"
+        tools:layout="@layout/fragment_alimento_suculentas" />
+    <fragment
+        android:id="@+id/luzSuculentasFragment"
+        android:name="com.example.gr.FragmentsSuculentas.LuzSuculentasFragment"
+        android:label="fragment_luz_suculentas"
+        tools:layout="@layout/fragment_luz_suculentas" />
+    <fragment
+        android:id="@+id/plantarSuculentasFragment"
+        android:name="com.example.gr.FragmentsSuculentas.PlantarSuculentasFragment"
+        android:label="fragment_plantar_suculentas"
+        tools:layout="@layout/fragment_plantar_suculentas" />
+    <fragment
+        android:id="@+id/riegoSuculentasFragment"
+        android:name="com.example.gr.FragmentsSuculentas.RiegoSuculentasFragment"
+        android:label="fragment_riego_suculentas"
+        tools:layout="@layout/fragment_riego_suculentas" />
+    <fragment
+        android:id="@+id/sitioSuculentasFragment"
+        android:name="com.example.gr.FragmentsSuculentas.SitioSuculentasFragment"
+        android:label="fragment_sitio_suculentas"
+        tools:layout="@layout/fragment_sitio_suculentas" />
 </navigation>

@@ -2,11 +2,18 @@ package com.example.gr;
 
 import android.os.Bundle;
 
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.TextView;
+
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -60,5 +67,107 @@ public class SuculentasFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_suculentas, container, false);
+    }
+
+    public void onViewCreated(@NotNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+
+        //BOTONES QUE ENVIAN AL FRAGMENT DE RIEGO
+        CardView myCardViewRiego = view.findViewById(R.id.carRiego);
+        TextView myTextViewRiego = view.findViewById(R.id.textRiego);
+
+        //BOTONES QUE ENVIAN AL FRAGMENT DE LUZ
+        CardView myCardViewLuZ = view.findViewById(R.id.carLuz);
+        TextView myTextViewLuz = view.findViewById(R.id.textLuz);
+
+        //BOTONES QUE ENVIAN AL FRAGMENT DE SITIO
+        CardView myCardViewSitio = view.findViewById(R.id.carSitio);
+        TextView myTextViewSitio = view.findViewById(R.id.textSitio);
+
+        //BOTONES QUE ENVIAN AL FRAGMENT DE ALIMENTO
+        CardView myCardViewAli = view.findViewById(R.id.carAlimento);
+        TextView myTextViewAli = view.findViewById(R.id.textAlimento);
+
+        //BOTONES QUE ENVIAN AL FRAGMENT DE COMO PLANTAR
+        CardView myCardViewCP = view.findViewById(R.id.carComoP);
+        TextView myTextViewCP = view.findViewById(R.id.textComoP);
+
+
+        //BOTONES QUE ENVIAN AL FRAGMENT DE RIEGO
+        myCardViewRiego.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //
+                Navigation.findNavController(view).navigate(R.id.action_suculentasFragment_to_riegoSuculentasFragment2);
+            }
+        });
+        myTextViewRiego.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Navigation.findNavController(view).navigate(R.id.action_suculentasFragment_to_riegoSuculentasFragment2);
+            }
+        });
+
+        //BOTONES QUE ENVIAN AL FRAGMENT DE LUZ
+        myCardViewLuZ.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //
+                Navigation.findNavController(view).navigate(R.id.action_suculentasFragment_to_luzSuculentasFragment);
+            }
+        });
+        myTextViewLuz.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Navigation.findNavController(view).navigate(R.id.action_suculentasFragment_to_luzSuculentasFragment);
+            }
+        });
+
+
+        //BOTONES QUE ENVIAN AL FRAGMENT DE SITIO
+        myCardViewSitio.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //
+                Navigation.findNavController(view).navigate(R.id.action_suculentasFragment_to_sitioSuculentasFragment);
+            }
+        });
+        myTextViewSitio.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Navigation.findNavController(view).navigate(R.id.action_suculentasFragment_to_sitioSuculentasFragment);
+            }
+        });
+
+        //BOTONES QUE ENVIAN AL FRAGMENT DE ALIMENTO
+        myCardViewAli.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //
+                Navigation.findNavController(view).navigate(R.id.action_suculentasFragment_to_alimentoSuculentasFragment);
+            }
+        });
+        myTextViewAli.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Navigation.findNavController(view).navigate(R.id.action_suculentasFragment_to_alimentoSuculentasFragment);
+            }
+        });
+
+        //BOTONES QUE ENVIAN AL FRAGMENT DE COMO PLANTAR
+        myCardViewCP.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //
+                Navigation.findNavController(view).navigate(R.id.action_suculentasFragment_to_plantarSuculentasFragment);
+            }
+        });
+        myTextViewCP.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Navigation.findNavController(view).navigate(R.id.action_suculentasFragment_to_plantarSuculentasFragment);
+            }
+        });
     }
 }
