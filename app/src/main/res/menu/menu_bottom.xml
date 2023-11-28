@@ -5,6 +5,7 @@
         android:id="@+id/inicioFragment"
         android:icon="@drawable/casa"
         android:title="Home"
+
         />
 
     <item

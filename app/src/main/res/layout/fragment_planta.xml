@@ -8,19 +8,32 @@
     android:backgroundTint="#F5F5F5"
     tools:context=".MainActivity">
 
+
     <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="130dp"
+            android:background="@drawable/borde_redondo"
+            android:gravity="center">
+
+
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="230dp"
+                android:layout_height="45dp"
+                android:gravity="center"
+                android:text="Mis plantas"
+                android:textColor="@color/black"
+                android:textSize="26sp"
+                tools:layout_editor_absoluteX="149dp"
+                tools:layout_editor_absoluteY="43dp" />
+
+
+        </LinearLayout>
 
 
 
@@ -28,18 +41,24 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="56dp"
             android:gravity="center"
-            android:orientation="horizontal">
+            android:orientation="vertical">
 
             <android.widget.Button
                 android:id="@+id/btn_add_planta"
-                android:layout_width="match_parent"
+                android:layout_width="212dp"
                 android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+
+                android:layout_marginBottom="16dp"
+
                 android:layout_weight="1"
-                android:backgroundTint="@color/purple_500"
-                android:text="agregar planta "
-                android:textSize="10sp"
+                android:background="@drawable/bordes_redondos"
+                android:text="Agregar planta "
+                android:textAllCaps="false"
+
                 app:cornerRadius="50dp" />
 
 
@@ -50,8 +69,8 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv"
-            android:layout_width="364dp"
-            android:layout_height="478dp"
+            android:layout_width="match_parent"
+            android:layout_height="538dp"
             android:orientation="horizontal"
             tools:layout_editor_absoluteX="1dp"
             tools:layout_editor_absoluteY="1dp" />

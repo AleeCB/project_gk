@@ -20,9 +20,9 @@
 
             <ImageView
                 android:id="@+id/imageView4"
-                android:layout_width="71dp"
-                android:layout_height="57dp"
-                app:srcCompat="@drawable/maceta"
+                android:layout_width="64dp"
+                android:layout_height="99dp"
+                app:srcCompat="@drawable/p1"
                 tools:layout_editor_absoluteX="31dp"
                 tools:layout_editor_absoluteY="34dp" />
 
@@ -51,7 +51,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:text="Consejos para el Cuidado"
+                android:text="Consejos para el cuidado"
                 android:textColor="@color/black"
                 android:textSize="18sp" />
         </LinearLayout>
@@ -64,7 +64,7 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv"
             android:layout_width="409dp"
-            android:layout_height="504dp"
+            android:layout_height="529dp"
             android:orientation="horizontal"
             tools:layout_editor_absoluteX="1dp"
             tools:layout_editor_absoluteY="1dp" />

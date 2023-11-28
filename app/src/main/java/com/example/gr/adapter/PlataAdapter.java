@@ -130,10 +130,10 @@ public class PlataAdapter extends FirebaseRecyclerAdapter<PlantaModel, PlataAdap
             @Override
             public void onClick(View v) {
                 AlertDialog.Builder builder = new AlertDialog.Builder(holder.nombre.getContext());
-                builder.setTitle("Are you sure?");
-                builder.setMessage("Deleted data can't be Undo.");
+                builder.setTitle("¿Está seguro?");
+                builder.setMessage("Los datos eliminados no se pueden deshacer.");
 
-                builder.setPositiveButton("Delete", new DialogInterface.OnClickListener() {
+                builder.setPositiveButton("Eliminar", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         FirebaseDatabase.getInstance().getReference().child("miPlanta")
@@ -142,7 +142,7 @@ public class PlataAdapter extends FirebaseRecyclerAdapter<PlantaModel, PlataAdap
                     }
                 });
 
-                builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                builder.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         Toast.makeText(holder.nombre.getContext(), "Cancelled", Toast.LENGTH_SHORT).show();

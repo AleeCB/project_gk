@@ -211,9 +211,8 @@ public class RecordatorioFragment extends Fragment {
                     timeUntilNotification = calendar.getTimeInMillis() - System.currentTimeMillis();
                 }
                 int random = (int) (Math.random() * 50 + 1);
-                Data data =  GuardarData(  "Notificacion workmanager" , "soy un detalle", random);
+                Data data =  GuardarData(  "Recordatorio. No te olvides de tu plantita" , "Soy un detalle", random);
                 Workmanagernoti.GuardarNoti(timeUntilNotification,data,tag);
-
 
 
                 Toast.makeText(mContext, "Recordatorio guardado.", Toast.LENGTH_SHORT).show();
