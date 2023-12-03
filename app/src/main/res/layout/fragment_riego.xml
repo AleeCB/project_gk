@@ -3,28 +3,29 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FragmentsSuculentas.RiegoSuculentasFragment">
+
+    tools:context=".RiegoFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="157dp"
-        android:background="@drawable/fondo_azul"
-        android:gravity="center">
-        <TextView
-            android:id="@+id/textCyS"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="45dp"
-            android:gravity="center"
-            android:text="Riego"
-            android:textColor="@color/black"
-            android:textSize="30sp"
-            tools:layout_editor_absoluteX="149dp"
-            tools:layout_editor_absoluteY="43dp" />
+            android:layout_height="157dp"
+            android:background="@drawable/fondo_azul"
+            android:gravity="center">
+            <TextView
+                android:id="@+id/textCyS"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:gravity="center"
+                android:text="Riego"
+                android:textColor="@color/black"
+                android:textSize="30sp"
+                tools:layout_editor_absoluteX="149dp"
+                tools:layout_editor_absoluteY="43dp" />
 
         </LinearLayout>
 
@@ -57,6 +58,7 @@
                 android:layout_marginLeft="10dp"
                 android:layout_toRightOf="@id/img1"
                 android:text="info"
+                android:textAlignment="center"
                 android:textColor="@color/black"
                 android:textSize="17sp"
                 android:textStyle="bold" />

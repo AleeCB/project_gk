@@ -72,7 +72,7 @@ public class SuculentasFragment extends Fragment {
     public void onViewCreated(@NotNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-
+/*
         //BOTONES QUE ENVIAN AL FRAGMENT DE RIEGO
         CardView myCardViewRiego = view.findViewById(R.id.carRiego);
         TextView myTextViewRiego = view.findViewById(R.id.textRiego);
@@ -168,6 +168,6 @@ public class SuculentasFragment extends Fragment {
             public void onClick(View v) {
                 Navigation.findNavController(view).navigate(R.id.action_suculentasFragment_to_plantarSuculentasFragment);
             }
-        });
+        });*/
     }
 }

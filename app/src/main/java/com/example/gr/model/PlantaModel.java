@@ -2,7 +2,7 @@ package com.example.gr.model;
 
 public class PlantaModel {
 
-    public byte[] getImageUrl;
+
     String localizacion, macetas, nombre, tipo, imageUrl;
 
     public PlantaModel() {
@@ -56,8 +56,5 @@ public class PlantaModel {
         this.imageUrl = imageUrl;
     }
 
-    public String getImagenPath() {
 
-        return "imagenes_planta/" + imageUrl;
-    }
 }

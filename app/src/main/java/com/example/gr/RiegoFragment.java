@@ -1,21 +1,22 @@
-package com.example.gr.FragmentsFollaje;
+package com.example.gr;
 
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
 
-import com.example.gr.R;
+import androidx.fragment.app.Fragment;
+
+import com.bumptech.glide.Glide;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link FollajeLuzFragment#newInstance} factory method to
+ * Use the {@link RiegoFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class FollajeLuzFragment extends Fragment {
+public class RiegoFragment extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -26,7 +27,7 @@ public class FollajeLuzFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public FollajeLuzFragment() {
+    public RiegoFragment() {
         // Required empty public constructor
     }
 
@@ -36,11 +37,11 @@ public class FollajeLuzFragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment FollajeLuzFragment.
+     * @return A new instance of fragment RiegoFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static FollajeLuzFragment newInstance(String param1, String param2) {
-        FollajeLuzFragment fragment = new FollajeLuzFragment();
+    public static RiegoFragment newInstance(String param1, String param2) {
+        RiegoFragment fragment = new RiegoFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -60,7 +61,26 @@ public class FollajeLuzFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_follaje_luz, container, false);
+        View view = inflater.inflate(R.layout.fragment_riego, container, false);
+
+        // Obtén los argumentos
+        Bundle args = getArguments();
+        if (args != null) {
+            String infoR = args.getString("infoRiego");
+            TextView textViewRiego = view.findViewById(R.id.textRiego); // Reemplaza con tu ID de TextView
+            textViewRiego.setText(infoR);
+
+
+            // Cargar la imagen usando Glide
+            ImageView imageView = view.findViewById(R.id.imgRiego); // Reemplaza con tu ID de ImageView
+            Glide.with(imageView.getContext() )
+                    .load(args.getString("imgRiego"))// URL de la imagen desde la base de datos
+                    .placeholder(com.firebase.ui.database.R.drawable.common_google_signin_btn_icon_dark)
+                    .circleCrop()
+                    .error(R.drawable.planta)
+                    .into(imageView);
+        }
+
+        return view;
     }
 }

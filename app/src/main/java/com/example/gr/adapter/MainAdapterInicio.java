@@ -1,5 +1,6 @@
 package com.example.gr.adapter;
 
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -28,7 +29,6 @@ public class MainAdapterInicio extends FirebaseRecyclerAdapter<MainModelinicio, 
         holder.nombre.setText(model.getNombre());
 
 
-
         // Glide para cargar la imagen desde la base de datos en lugar de la URL
         Glide.with(holder.img.getContext())
                 .load(model.getImagen())// URL de la imagen desde la base de datos
@@ -39,6 +39,36 @@ public class MainAdapterInicio extends FirebaseRecyclerAdapter<MainModelinicio, 
 
 
 
+        holder.img.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Bundle bundle = new Bundle();
+                bundle.putString("nombre", model.getNombre());
+                bundle.putString("frase", model.getFrase());
+                bundle.putString("icono", model.getIcono());
+                bundle.putString("imgRiego", model.getImgRiego());
+                bundle.putString("infoRiego", model.getInfoRiego());
+                bundle.putString("imgLuz", model.getImgLuz());
+                bundle.putString("infoLuz", model.getInfoLuz());
+                bundle.putString("imgSitio", model.getImgSitio());
+                bundle.putString("infoSitio", model.getInfoSitio());
+                bundle.putString("imgAli", model.getImgAli());
+                bundle.putString("infoAli", model.getInfoAli());
+                bundle.putString("imgPlan", model.getImgPlan());
+                bundle.putString("infoPlan", model.getInfoPlan());
+
+
+
+                Navigation.findNavController(v).navigate(R.id.action_inicioFragment_to_cuidadosFragment, bundle);
+            }
+
+        });
+
+
+    }
+
+/*
         holder.img.setTag(position);
 
         // Configurar el evento de clic en la imagen
@@ -81,8 +111,8 @@ public class MainAdapterInicio extends FirebaseRecyclerAdapter<MainModelinicio, 
             default:
                 // Manejar caso predeterminado o no hacer nada
                 break;
-        }
-    }
+        }*/
+
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {

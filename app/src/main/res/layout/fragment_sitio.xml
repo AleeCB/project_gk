@@ -3,42 +3,43 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FragmentsSuculentas.SitioSuculentasFragment">
+    tools:context=".SitioFragment">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="157dp"
-        android:background="@drawable/fondo_rojo"
-        android:gravity="center">
-        <TextView
-            android:id="@+id/textCyS"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="45dp"
+            android:layout_height="157dp"
+            android:background="@drawable/fondo_rojo"
+            android:gravity="center">
+            <TextView
+                android:id="@+id/textCyS"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:gravity="center"
+                android:text="Donde ubicarlas"
+                android:textColor="@color/black"
+                android:textSize="30sp"
+                tools:layout_editor_absoluteX="149dp"
+                tools:layout_editor_absoluteY="43dp" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="159dp"
             android:gravity="center"
-            android:text="Donde ubicarlas"
-            android:textColor="@color/black"
-            android:textSize="30sp"
-            tools:layout_editor_absoluteX="149dp"
-            tools:layout_editor_absoluteY="43dp" />
+            android:orientation="vertical">
 
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="159dp"
-        android:gravity="center"
-        android:orientation="vertical">
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/imgSitio"
+                android:layout_width="147dp"
+                android:layout_height="139dp"
+                android:src="@mipmap/ic_launcher"
 
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/imgSitio"
-            android:layout_width="147dp"
-            android:layout_height="139dp"
-            android:src="@mipmap/ic_launcher"
-
-            tools:ignore="MissingClass" />
-    </LinearLayout>
+                tools:ignore="MissingClass" />
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -59,4 +60,5 @@
                 android:textStyle="bold" />
         </LinearLayout>
     </LinearLayout>
+
 </FrameLayout>

@@ -52,17 +52,15 @@ public class PlataAdapter extends FirebaseRecyclerAdapter<PlantaModel, PlataAdap
 
 
         // Cargar la imagen desde Firebase Storage usando Glide
-        StorageReference storageReference = FirebaseStorage.getInstance().getReference();
-
-        // Construir la URL completa de la imagen
 
 
         Glide.with(holder.imageUrl.getContext())
-                .load(model.getImageUrl)// URL de la imagen desde la base de datos
+                .load(model.getImageUrl())// URL de la imagen desde la base de datos
                 .placeholder(com.firebase.ui.database.R.drawable.common_google_signin_btn_icon_dark)
                 .circleCrop()
                 .error(com.firebase.ui.database.R.drawable.common_google_signin_btn_icon_dark_normal)
-                .into(holder.imageUrl);
+                .into(holder.imageUrl)
+        ;
 
 
         // botones de editar y eliminar

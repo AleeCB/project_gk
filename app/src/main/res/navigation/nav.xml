@@ -11,23 +11,8 @@
         android:label="fragment_inicio"
         tools:layout="@layout/fragment_inicio" >
         <action
-            android:id="@+id/action_inicioFragment_to_suculentasFragment"
-            app:destination="@id/suculentasFragment" />
-        <action
-            android:id="@+id/action_inicioFragment_to_colgantesFragment"
-            app:destination="@id/colgantesFragment" />
-        <action
-            android:id="@+id/action_inicioFragment_to_floracionFragment"
-            app:destination="@id/floracionFragment" />
-        <action
-            android:id="@+id/action_inicioFragment_to_follageFragment"
-            app:destination="@id/follageFragment" />
-        <action
-            android:id="@+id/action_inicioFragment_to_grandesFragment"
-            app:destination="@id/grandesFragment" />
-        <action
-            android:id="@+id/action_inicioFragment_to_vegetalesFragment"
-            app:destination="@id/vegetalesFragment" />
+            android:id="@+id/action_inicioFragment_to_cuidadosFragment"
+            app:destination="@id/cuidadosFragment" />
     </fragment>
     <fragment
         android:id="@+id/recordatorioFragment"
@@ -45,74 +30,49 @@
         android:label="fragment_usuario"
         tools:layout="@layout/fragment_usuario" />
     <fragment
-        android:id="@+id/suculentasFragment"
-        android:name="com.example.gr.SuculentasFragment"
-        android:label="fragment_suculentas"
-        tools:layout="@layout/fragment_suculentas" >
+        android:id="@+id/cuidadosFragment"
+        android:name="com.example.gr.CuidadosFragment"
+        android:label="fragment_cuidados"
+        tools:layout="@layout/fragment_cuidados" >
         <action
-            android:id="@+id/action_suculentasFragment_to_sitioSuculentasFragment"
-            app:destination="@id/sitioSuculentasFragment" />
+            android:id="@+id/action_cuidadosFragment_to_riegoFragment"
+            app:destination="@id/riegoFragment" />
         <action
-            android:id="@+id/action_suculentasFragment_to_plantarSuculentasFragment"
-            app:destination="@id/plantarSuculentasFragment" />
+            android:id="@+id/action_cuidadosFragment_to_luzFragment"
+            app:destination="@id/luzFragment" />
         <action
-            android:id="@+id/action_suculentasFragment_to_luzSuculentasFragment"
-            app:destination="@id/luzSuculentasFragment" />
+            android:id="@+id/action_cuidadosFragment_to_sitioFragment"
+            app:destination="@id/sitioFragment" />
         <action
-            android:id="@+id/action_suculentasFragment_to_alimentoSuculentasFragment"
-            app:destination="@id/alimentoSuculentasFragment" />
+            android:id="@+id/action_cuidadosFragment_to_alimentoFragment"
+            app:destination="@id/alimentoFragment" />
         <action
-            android:id="@+id/action_suculentasFragment_to_riegoSuculentasFragment2"
-            app:destination="@id/riegoSuculentasFragment" />
+            android:id="@+id/action_cuidadosFragment_to_plantarFragment"
+            app:destination="@id/plantarFragment" />
     </fragment>
     <fragment
-        android:id="@+id/vegetalesFragment"
-        android:name="com.example.gr.VegetalesFragment"
-        android:label="fragment_vegetales"
-        tools:layout="@layout/fragment_vegetales" />
+        android:id="@+id/riegoFragment"
+        android:name="com.example.gr.RiegoFragment"
+        android:label="fragment_riego"
+        tools:layout="@layout/fragment_riego" />
     <fragment
-        android:id="@+id/colgantesFragment"
-        android:name="com.example.gr.ColgantesFragment"
-        android:label="fragment_colgantes"
-        tools:layout="@layout/fragment_colgantes" />
+        android:id="@+id/luzFragment"
+        android:name="com.example.gr.LuzFragment"
+        android:label="fragment_luz"
+        tools:layout="@layout/fragment_luz" />
     <fragment
-        android:id="@+id/floracionFragment"
-        android:name="com.example.gr.FloracionFragment"
-        android:label="fragment_floracion"
-        tools:layout="@layout/fragment_floracion" />
+        android:id="@+id/sitioFragment"
+        android:name="com.example.gr.SitioFragment"
+        android:label="fragment_sitio"
+        tools:layout="@layout/fragment_sitio" />
     <fragment
-        android:id="@+id/follageFragment"
-        android:name="com.example.gr.FollageFragment"
-        android:label="fragment_follage"
-        tools:layout="@layout/fragment_follage" />
+        android:id="@+id/plantarFragment"
+        android:name="com.example.gr.PlantarFragment"
+        android:label="fragment_plantar"
+        tools:layout="@layout/fragment_plantar" />
     <fragment
-        android:id="@+id/grandesFragment"
-        android:name="com.example.gr.GrandesFragment"
-        android:label="fragment_grandes"
-        tools:layout="@layout/fragment_grandes" />
-    <fragment
-        android:id="@+id/alimentoSuculentasFragment"
-        android:name="com.example.gr.FragmentsSuculentas.AlimentoSuculentasFragment"
-        android:label="fragment_alimento_suculentas"
-        tools:layout="@layout/fragment_alimento_suculentas" />
-    <fragment
-        android:id="@+id/luzSuculentasFragment"
-        android:name="com.example.gr.FragmentsSuculentas.LuzSuculentasFragment"
-        android:label="fragment_luz_suculentas"
-        tools:layout="@layout/fragment_luz_suculentas" />
-    <fragment
-        android:id="@+id/plantarSuculentasFragment"
-        android:name="com.example.gr.FragmentsSuculentas.PlantarSuculentasFragment"
-        android:label="fragment_plantar_suculentas"
-        tools:layout="@layout/fragment_plantar_suculentas" />
-    <fragment
-        android:id="@+id/riegoSuculentasFragment"
-        android:name="com.example.gr.FragmentsSuculentas.RiegoSuculentasFragment"
-        android:label="fragment_riego_suculentas"
-        tools:layout="@layout/fragment_riego_suculentas" />
-    <fragment
-        android:id="@+id/sitioSuculentasFragment"
-        android:name="com.example.gr.FragmentsSuculentas.SitioSuculentasFragment"
-        android:label="fragment_sitio_suculentas"
-        tools:layout="@layout/fragment_sitio_suculentas" />
+        android:id="@+id/alimentoFragment"
+        android:name="com.example.gr.AlimentoFragment"
+        android:label="fragment_alimento"
+        tools:layout="@layout/fragment_alimento" />
 </navigation>
