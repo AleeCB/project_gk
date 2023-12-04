@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fondo"
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:context=".SignUpActivity">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="240dp"
+        android:layout_above="@id/card_view"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="28dp">
+
+
+        <!--<ImageView
+            android:id="@+id/imageView8"
+            android:layout_width="264dp"
+            android:layout_height="117dp"
+            android:gravity="end"
+            app:srcCompat="@drawable/logo" />-->
+    </LinearLayout>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="340dp"
+        android:background="@color/black"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        app:cardCornerRadius="28dp"
+        android:layout_marginBottom="-20dp"
+        android:id="@+id/card_view"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@color/grey"
+            android:padding="28dp">
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="¡Únete!"
+                android:layout_gravity="center"
+                android:textColor="@color/black"
+                android:textSize="32sp"
+                android:textStyle="bold" />
+
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Correo"
+                android:alpha="0.8"
+                android:textColor="@color/black"
+                android:textStyle="bold"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/signupEmail"
+                    android:layout_width="228dp"
+                    android:alpha="1"
+                    android:textColor="@color/black"
+                    android:hint= 'ejemplo@gmail.coom'
+                    android:layout_height="wrap_content"
+                    android:inputType="textEmailAddress"/>
+
+                <ImageView
+                    android:id="@+id/imageView5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="34dp"
+
+                    android:src="@drawable/correo" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:alpha="0.8"
+                android:textColor="@color/black"
+                android:text="Contraseña"
+                android:textStyle="bold" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+                <EditText
+                    android:id="@+id/signupPassword"
+                    android:layout_width="228dp"
+                    android:hint= 'fecha1'
+                    android:alpha="1"
+                    android:textColor="@color/black"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPassword"
+                    />
+                <ImageView
+                    android:id="@+id/imageView6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="34dp"
+
+                    android:src="@drawable/contrasena" />
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+            </RelativeLayout>
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="10dp"/>
+
+            <android.widget.Button
+                android:id="@+id/signupButton"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:onClick="abreActivity4"
+                android:text="Registrarse"
+                android:background="@drawable/bordes_redondos"
+                app:cornerRadius="32dp"/>
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="10dp"/>
+
+
+            <TextView
+                android:id="@+id/loginRedirectText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ya tengo cuenta"
+                android:layout_gravity="center"
+                android:alpha="0.8"
+                android:textColor="@color/black"
+                android:textStyle="bold"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center">
+
+
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>
