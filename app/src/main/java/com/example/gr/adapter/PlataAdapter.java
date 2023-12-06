@@ -64,22 +64,19 @@ public class PlataAdapter extends FirebaseRecyclerAdapter<PlantaModel, PlataAdap
 
 
         // botones de editar y eliminar
-        // botones de editar y eliminar
+
         holder.btnEdit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                // lo siguiente hace que se muestre el update_popup al presionar el botón editar
-                final DialogPlus dialogPlus = DialogPlus.newDialog(holder.imageUrl.getContext())
-                        .setContentHolder(new ViewHolder(R.layout.update_popup))
-                        .setExpanded(true, 1200)
-                        .create();
+                    AlertDialog.Builder builder = new AlertDialog.Builder(holder.imageUrl.getContext());
 
-                // esto es solo para ver que realmente funciona dialogPlus.show();
 
-                View view = dialogPlus.getHolderView();
+                    View view = LayoutInflater.from(holder.imageUrl.getContext())
+                            .inflate(R.layout.update_popup, (ViewGroup) v.getParent(), false);
 
-                EditText name = view.findViewById(R.id.txtNombre);
+
+                    EditText name = view.findViewById(R.id.txtNombre);
                 EditText loca = view.findViewById(R.id.txtLoca);
                 EditText tipo = view.findViewById(R.id.txtTipo);
                 EditText macetas = view.findViewById(R.id.txtMacetas);
@@ -92,7 +89,10 @@ public class PlataAdapter extends FirebaseRecyclerAdapter<PlantaModel, PlataAdap
                 tipo.setText(model.getTipo());
                 macetas.setText(model.getMacetas());
 
-                dialogPlus.show();
+                builder.setView(view);
+                AlertDialog dialog = builder.create();
+                dialog.show();
+
 
                 btnUpdate.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -109,14 +109,14 @@ public class PlataAdapter extends FirebaseRecyclerAdapter<PlantaModel, PlataAdap
                                     @Override
                                     public void onSuccess(Void unused) {
                                         Toast.makeText(holder.nombre.getContext(), "Data Updated Successfully", Toast.LENGTH_SHORT).show();
-                                        dialogPlus.dismiss();
+                                        dialog.dismiss();
                                     }
                                 })
                                 .addOnFailureListener(new OnFailureListener() {
                                     @Override
                                     public void onFailure(@NonNull Exception e) {
                                         Toast.makeText(holder.nombre.getContext(), "Error While Updating", Toast.LENGTH_SHORT).show();
-                                        dialogPlus.dismiss();
+                                        dialog.dismiss();
                                     }
                                 });
                     }

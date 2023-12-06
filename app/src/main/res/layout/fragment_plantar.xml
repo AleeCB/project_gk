@@ -19,6 +19,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="45dp"
                 android:gravity="center"
+                android:textAlignment="center"
                 android:text="Lo mejor para plantarlas"
                 android:textColor="@color/black"
                 android:textSize="25sp"
@@ -56,9 +57,10 @@
                 android:layout_marginLeft="10dp"
                 android:layout_toRightOf="@id/img1"
                 android:text="info"
+                android:textAlignment="center"
                 android:textColor="@color/black"
                 android:textSize="17sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"/>
         </LinearLayout>
     </LinearLayout>
 

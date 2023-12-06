@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/fondo"
+    android:background="@drawable/rosa"
     android:orientation="vertical"
     android:gravity="center"
 
@@ -40,9 +40,10 @@
             android:layout_gravity="center"
             android:background="@color/grey"
             android:padding="28dp">
+
             <View
                 android:layout_width="wrap_content"
-                android:layout_height="40dp"/>
+                android:layout_height="10dp" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -63,7 +64,8 @@
                 android:text="Correo"
                 android:alpha="0.8"
                 android:textColor="@color/black"
-                android:textStyle="bold"/>
+                android:textStyle="bold"
+                android:textSize="20sp"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -96,6 +98,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:alpha="0.8"
+                android:textSize="20sp"
                 android:textColor="@color/black"
                 android:text="Contraseña"
                 android:textStyle="bold" />
@@ -132,12 +135,15 @@
 
             <android.widget.Button
                 android:id="@+id/loginButton"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:onClick="abreActivity5"
-                android:text="Iniciar sesión "
+                android:layout_width="186dp"
+                android:layout_height="49dp"
+                android:layout_gravity="center"
                 android:background="@drawable/bordes_redondos"
-                app:cornerRadius="32dp"/>
+                android:onClick="abreActivity5"
+                android:text="Iniciar Sesión"
+                android:textAllCaps="false"
+                android:textColor="@color/black"
+                android:textSize="15sp" />
 
             <View
                 android:layout_width="wrap_content"

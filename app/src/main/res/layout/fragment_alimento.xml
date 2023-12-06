@@ -19,6 +19,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="45dp"
                 android:gravity="center"
+                android:textAlignment="center"
                 android:text="Para estar sanas "
                 android:textColor="@color/black"
                 android:textSize="25sp"
@@ -51,10 +52,12 @@
                 android:id="@+id/textAlimento"
                 android:layout_width="333dp"
                 android:layout_height="333dp"
+
                 android:layout_below="@id/nombretext"
                 android:layout_marginLeft="10dp"
                 android:layout_toRightOf="@id/img1"
                 android:text="info"
+                android:textAlignment="center"
                 android:textColor="@color/black"
                 android:textSize="17sp"
                 android:textStyle="bold" />

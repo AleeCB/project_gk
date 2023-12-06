@@ -1,4 +1,4 @@
-package com.example.gr;
+package com.example.gr.model;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;

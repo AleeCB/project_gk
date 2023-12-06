@@ -22,6 +22,9 @@ import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
+import com.example.gr.adapter.AlarmasAdapter;
+import com.example.gr.model.Alarma;
+
 import org.jetbrains.annotations.Nullable;
 
 import java.text.SimpleDateFormat;
@@ -237,7 +240,7 @@ public class RecordatorioFragment extends Fragment {
             // Notificar al adaptador que se ha eliminado un elemento
             alarmasAdapter.notifyItemRemoved(position);
 
-            Toast.makeText(mContext, "Alarma eliminada.", Toast.LENGTH_SHORT).show();
+            Toast.makeText(mContext, "Recordatorio eliminado.", Toast.LENGTH_SHORT).show();
         }
     }
 }

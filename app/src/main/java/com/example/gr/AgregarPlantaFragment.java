@@ -90,7 +90,7 @@ public class AgregarPlantaFragment extends DialogFragment {
     }
 
     private void uploadImageAndPostPet(final String nombreP, final String localiP, final String tipoP, final String cMacetasP) {
-        // Crea una referencia única para la imagen
+        // Crear una referencia única para la imagen
         final StorageReference imageRef = mStorageRef.child(System.currentTimeMillis() + ".jpg");
 
         // Sube la imagen al Storage
@@ -98,12 +98,12 @@ public class AgregarPlantaFragment extends DialogFragment {
                 .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                     @Override
                     public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                        // La imagen se ha subido exitosamente
-                        // Ahora obtén la URL de la imagen
+                        // La imagen se ha subido
+                        // obtener  la URL de la imagen
                         imageRef.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
                             @Override
                             public void onSuccess(Uri downloadUri) {
-                                // Ahora, `downloadUri` contiene la URL de la imagen
+                                // se almacena en "downloadUri" contiene la URL de la imagen
                                 String imageUrl = downloadUri.toString();
                                 postPetConImagen(nombreP, localiP, tipoP, cMacetasP, imageUrl);
                             }
@@ -113,7 +113,7 @@ public class AgregarPlantaFragment extends DialogFragment {
                 .addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
-                        // Maneja el fallo al subir la imagen
+                        // fallo al subir la imagen
                         Toast.makeText(getContext(), "Error al subir la imagen", Toast.LENGTH_SHORT).show();
                     }
                 });
@@ -162,7 +162,7 @@ public class AgregarPlantaFragment extends DialogFragment {
             mImageUri = data.getData();
             imageView.setImageURI(mImageUri);
             btn_add_image.setVisibility(View.GONE); // Ocultar el botón después de seleccionar la imagen
-            // Puedes mostrar un Toast o realizar otras acciones si lo deseas
+
         }
     }
 }

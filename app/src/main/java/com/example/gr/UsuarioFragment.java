@@ -24,6 +24,8 @@ import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.EmailAuthProvider;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -38,7 +40,7 @@ public class UsuarioFragment extends Fragment {
     private static final String ARG_PARAM2 = "param2";
     private FirebaseAuth auth;
     private FirebaseUser currentUser;
-    private PopupWindow popupWindow;
+    private AlertDialog alertDialog;
 
     private TextView correoTextView;
     private Button editarContrasenaButton;
@@ -111,19 +113,26 @@ public class UsuarioFragment extends Fragment {
     }
 
     private void solicitarContrasenaParaMostrarVentanaEmergente() {
-        // Inflar el diseño personalizado para la ventana emergente
+        // Crear un AlertDialog.Builder
+        AlertDialog.Builder builder = new AlertDialog.Builder(requireContext());
+
+
+        // Inflar el diseño personalizado para el contenido del diálogo
         View popupView = getLayoutInflater().inflate(R.layout.editar_contra_popup, null);
 
-        // Crear la ventana emergente y configurarla
-        popupWindow = new PopupWindow(popupView, ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT, true);
-
         // Configurar referencias a elementos en el diseño de la ventana emergente
-        @SuppressLint({"MissingInflatedId", "LocalSuppress"}) TextInputLayout contrasenaActualInputLayout = popupView.findViewById(R.id.contrasenaActualInputLayout);
+
         @SuppressLint({"MissingInflatedId", "LocalSuppress"}) EditText contrasenaActualEditText = popupView.findViewById(R.id.contrasenaActualEditText);
-        @SuppressLint({"MissingInflatedId", "LocalSuppress"}) TextInputLayout nuevaContrasenaInputLayout = popupView.findViewById(R.id.nuevaContrasenaInputLayout);
+
         @SuppressLint({"MissingInflatedId", "LocalSuppress"}) EditText nuevaContrasenaEditText = popupView.findViewById(R.id.nuevaContrasenaEditText);
         @SuppressLint({"MissingInflatedId", "LocalSuppress"}) Button guardarButton = popupView.findViewById(R.id.guardarButton);
         @SuppressLint({"MissingInflatedId", "LocalSuppress"}) Button cancelarButton = popupView.findViewById(R.id.cancelarButton);
+
+        // Configurar el diseño personalizado en el diálogo
+        builder.setView(popupView);
+        // Crear y mostrar el AlertDialog
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
 
         // Configurar el onClickListener para el botón de guardar en la ventana emergente
         guardarButton.setOnClickListener(new View.OnClickListener() {
@@ -132,6 +141,7 @@ public class UsuarioFragment extends Fragment {
                 String contrasenaIngresada = contrasenaActualEditText.getText().toString();
                 // Verificar la contraseña ingresada antes de mostrar la ventana emergente
                 verificarContrasenaActualYMostrarVentanaEmergente(contrasenaIngresada, nuevaContrasenaEditText.getText().toString());
+                alertDialog.dismiss();
             }
         });
 
@@ -140,13 +150,13 @@ public class UsuarioFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 // Cerrar la ventana emergente sin guardar cambios
-                popupWindow.dismiss();
+                alertDialog.dismiss();
             }
         });
 
-        // Mostrar la ventana emergente en el centro de la pantalla
-        popupWindow.showAtLocation(getView(), Gravity.CENTER, 0, 0);
+
     }
+
 
     private void verificarContrasenaActualYMostrarVentanaEmergente(String contrasenaIngresada, String nuevaContrasena) {
         // Crear credencial con el correo electrónico actual y la contraseña ingresada
@@ -160,7 +170,10 @@ public class UsuarioFragment extends Fragment {
                         if (task.isSuccessful()) {
                             // Reautenticación exitosa, mostrar la ventana emergente
                             cambiarContrasena(nuevaContrasena);
-                            popupWindow.dismiss();
+                            // Asegúrate de que alertDialog no sea nulo antes de intentar dismiss
+                            if (alertDialog != null) {
+                                alertDialog.dismiss();
+                            }
                         } else {
                             // Reautenticación fallida, mostrar un mensaje al usuario
                             Toast.makeText(getActivity(), "Contraseña incorrecta. Inténtelo de nuevo.", Toast.LENGTH_SHORT).show();
@@ -176,7 +189,7 @@ public class UsuarioFragment extends Fragment {
                     if (task.isSuccessful()) {
                         Toast.makeText(getActivity(), "Contraseña actualizada exitosamente", Toast.LENGTH_SHORT).show();
                     } else {
-                        Toast.makeText(getActivity(), "Error al actualizar la contraseña: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getActivity(), "Error al actualizar" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                     }
                 });
     }

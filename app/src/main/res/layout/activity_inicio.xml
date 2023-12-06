@@ -55,13 +55,14 @@
 
         <android.widget.Button
             android:id="@+id/button"
-            android:layout_width="300dp"
+            android:layout_width="273dp"
             android:layout_height="48dp"
             android:background="@drawable/bordes_redondos"
             android:onClick="abreLogin"
-
             android:text="Iniciar Sesión"
-            android:textColor="@color/white" />
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            android:textSize="15sp" />
 
 
     </LinearLayout>
@@ -75,11 +76,14 @@
 
         <android.widget.Button
             android:id="@+id/button2"
-            android:layout_width="300dp"
+            android:layout_width="273dp"
             android:layout_height="48dp"
             android:background="@drawable/bordes_redondos"
             android:onClick="abreSignUp"
-            android:text="No tengo cuenta" />
+            android:text="Registrarme"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            android:textSize="15sp" />
 
 
     </LinearLayout>

@@ -1,4 +1,4 @@
-package com.example.gr;
+package com.example.gr.adapter;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -7,6 +7,9 @@ import android.widget.Button;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.gr.model.Alarma;
+import com.example.gr.R;
 
 import java.util.List;
 

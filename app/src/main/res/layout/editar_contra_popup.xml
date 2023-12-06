@@ -1,49 +1,110 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- popup_editar_contrasena.xml -->
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+android:layout_width="250dp"
+android:layout_height="wrap_content"
+xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    android:padding="16dp">
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/contrasenaActualInputLayout"
-        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Contraseña actual">
+    android:gravity="center"
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/contrasenaActualEditText"
-            android:layout_width="match_parent"
+
+    android:layout_gravity="center">
+
+
+    <LinearLayout
+        android:layout_width="227dp"
+        android:layout_height="8dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="8dp" />
+        <LinearLayout
+            android:layout_width="223dp"
+            android:layout_height="49dp"
+            android:layout_gravity="center"
+            android:background="@drawable/borde_redondos"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Cambiar contraseña"
+                android:textAlignment="center"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="250dp"
             android:layout_height="wrap_content"
-            android:inputType="textPassword"/>
-    </com.google.android.material.textfield.TextInputLayout>
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="8dp" />
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/nuevaContrasenaInputLayout"
-        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
-        android:layout_width="match_parent"
+    <EditText
+        android:id="@+id/contrasenaActualEditText"
+        android:layout_width="223dp"
         android:layout_height="wrap_content"
-        android:hint="Nueva contraseña">
+        android:ems="10"
+        android:hint="Contraseña actual"
+        android:inputType="textPersonName" />
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/nuevaContrasenaEditText"
-            android:layout_width="match_parent"
+        <LinearLayout
+            android:layout_width="250dp"
             android:layout_height="wrap_content"
-            android:inputType="textPassword"/>
-    </com.google.android.material.textfield.TextInputLayout>
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="8dp" />
 
-    <Button
-        android:id="@+id/guardarButton"
-        android:layout_width="match_parent"
+    <EditText
+        android:id="@+id/nuevaContrasenaEditText"
+        android:layout_width="223dp"
         android:layout_height="wrap_content"
-        android:text="Guardar"/>
+        android:ems="10"
+        android:hint="Nueva contraseña"
+        android:inputType="textPersonName" />
 
-    <Button
-        android:id="@+id/cancelarButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Cancelar"/>
-</LinearLayout>
+        <LinearLayout
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="8dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="8dp">
+
+            <android.widget.Button
+                android:id="@+id/guardarButton"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:background="@drawable/bordes_redondos_rosa"
+                android:onClick="abreActivity5"
+                android:text="Guardar"
+                android:textColor="#454343"
+                android:textAllCaps="false" />
+
+            <LinearLayout
+                android:layout_width="18dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="horizontal" />
+
+
+            <android.widget.Button
+                android:id="@+id/cancelarButton"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:background="@drawable/bordes_redondos_rosa"
+                android:text="Cancelar"
+                android:textColor="#454343"
+                android:textAllCaps="false" />
+        </LinearLayout>
+    </LinearLayout>
+
+

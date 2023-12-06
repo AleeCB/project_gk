@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".InicioFragment">
 
@@ -18,22 +18,29 @@
             android:background="@drawable/borde_redondo"
             android:gravity="center">
 
-            <ImageView
-                android:id="@+id/imageView4"
-                android:layout_width="64dp"
-                android:layout_height="99dp"
-                app:srcCompat="@drawable/p1"
-                tools:layout_editor_absoluteX="31dp"
-                tools:layout_editor_absoluteY="34dp" />
+            <LinearLayout
+                android:layout_width="60dp"
+                android:layout_height="75dp"
+
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/imageView4"
+                    android:layout_width="197dp"
+                    android:layout_height="131dp"
+                    app:srcCompat="@drawable/logoo"
+                    tools:layout_editor_absoluteX="31dp"
+                    tools:layout_editor_absoluteY="34dp" />
+            </LinearLayout>
 
             <TextView
                 android:id="@+id/textView"
-                android:layout_width="230dp"
+                android:layout_width="276dp"
                 android:layout_height="45dp"
                 android:gravity="center"
                 android:text="¡Cada maceta es una pincelada  verde en el lienzo de tu espacio!"
-                android:textColor="@color/black"
-                android:textSize="16sp"
+                android:textColor="#393838"
+                android:textSize="18sp"
                 tools:layout_editor_absoluteX="149dp"
                 tools:layout_editor_absoluteY="43dp" />
         </LinearLayout>
@@ -53,7 +60,7 @@
                 android:gravity="center"
                 android:text="Consejos para el cuidado"
                 android:textColor="@color/black"
-                android:textSize="18sp" />
+                android:textSize="20sp" />
         </LinearLayout>
 
         <LinearLayout
@@ -63,11 +70,11 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv"
-            android:layout_width="409dp"
-            android:layout_height="529dp"
+            android:layout_width="412dp"
+            android:layout_height="650dp"
             android:orientation="horizontal"
-            tools:layout_editor_absoluteX="1dp"
-            tools:layout_editor_absoluteY="1dp" />
+
+            />
 
 
     </LinearLayout>

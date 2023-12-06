@@ -40,14 +40,15 @@
 
             <android.widget.Button
                 android:id="@+id/btn_recordatorio"
-                android:layout_width="210dp"
+                android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
                 android:layout_centerHorizontal="true"
                 android:layout_marginBottom="16dp"
                 android:background="@drawable/bordes_redondos"
-                android:text="Nuevo recordatorio"
-                android:textAllCaps="false"/>
+                android:text="+"
+                android:textAllCaps="false"
+                android:textSize="35sp" />
         </LinearLayout>
 
         <!-- Contenedor para mostrar las alarmas -->
@@ -60,7 +61,7 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recycler_alarmas"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="523dp" />
         </LinearLayout>
 
 
